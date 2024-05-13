@@ -32,6 +32,12 @@ public class ApiResponse {
             this.message = message;
             
         }
+    
+        public ApiResponse(HttpStatus status, Object data) {
+            super();
+            this.status = status.value();
+            this.data = data;
+        }
         
         public int getStatus() {
             return status;

@@ -12,18 +12,18 @@ import java.util.List;
 
 @RestController
 public class TestController {
-    
+
     @GetMapping("/test")
     public ResponseEntity<Object> test() {
         ApiResponse exceptionResponse = new ApiResponse(HttpStatus.OK, "Hello World");
         return new ResponseEntity<>(exceptionResponse, HttpStatus.OK);
     }
-    
+
     @GetMapping("/created")
     public ResponseEntity<Object> created() {
         return ResponseEntity.internalServerError().build();
     }
-    
+
     @GetMapping("/exception")
     public String exception() throws UserNotFoundException {
         List<String> numbers = new ArrayList<>();

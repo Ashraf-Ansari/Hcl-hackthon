@@ -11,6 +11,7 @@ import org.springframework.web.context.request.WebRequest;
 
 @ControllerAdvice
 public class CustomizeResponseEntityHandler {
+    
     @ExceptionHandler(UserNotFoundException.class)
     public final ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex, WebRequest request) {
         ApiResponse exceptionResponse = new ApiResponse(ex.getStatusCode(), ex.getMessage());
